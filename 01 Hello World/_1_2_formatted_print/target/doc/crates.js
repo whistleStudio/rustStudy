@@ -1,0 +1,1 @@
+window.ALL_CRATES = ["_1_2_formatted_print"];
