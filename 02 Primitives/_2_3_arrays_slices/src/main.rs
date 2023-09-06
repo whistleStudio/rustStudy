@@ -36,6 +36,7 @@ fn main() {
     }
     println!("end...");
     // expect 解包；正确返回v，错误panick
-    println!("{}", xs.get(4).expect("err"));
+    println!("{}", &xs[1..3].get(0).expect("err"));
+    println!("{}", xs.get(5).expect("err"));
     println!("{}", xs.get(5).expect("err"));
 }
