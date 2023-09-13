@@ -1,1 +1,0 @@
-D:\WorkSpace\whistleStudio\note\rustStudy\02\ Primitives\_2_1_literals_operators\target\debug\_2_1_literals_operators.exe: D:\WorkSpace\whistleStudio\note\rustStudy\02\ Primitives\_2_1_literals_operators\src\main.rs
