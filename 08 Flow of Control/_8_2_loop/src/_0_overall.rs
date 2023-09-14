@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 pub fn show () {
     let mut count = 0;
     loop {
