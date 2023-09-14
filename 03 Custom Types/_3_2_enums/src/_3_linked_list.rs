@@ -39,7 +39,7 @@ impl List {
 
 // // 资料：https://blog.rust-lang.org/2018/05/10/Rust-1.26.html#nicer-match-bindings
 fn about_match_ref () {
-    // new edition match引用的话，pattern不加&，自动当作&引用处理，并且内部也自动ref匹配；加&就没用了，该写的ref还得写
+    // 新版本特性 match Option引用的话，pattern不加&，自动当作&引用处理，并且内部也自动ref匹配；加&就没用了，该写的ref还得写
     let a = Some("x".to_string());
     let b = &a;
     match b {
