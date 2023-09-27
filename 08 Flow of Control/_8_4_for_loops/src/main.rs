@@ -12,7 +12,10 @@ fn main() {
     }
 
     // iter_use();
-    iter_mut_use();
+    // iter_mut_use();
+    // let s = &String::from("rust");
+    // println!("{}", s);
+    let a = b'a';
 }
 
 fn into_iter_use () {
