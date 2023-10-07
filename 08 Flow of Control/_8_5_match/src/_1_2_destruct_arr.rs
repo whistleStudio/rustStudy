@@ -14,4 +14,5 @@ pub fn show () {
         [5, rest_arr@..] => println!("rest arr: {:?}", rest_arr),
         [first, rest_arr@.., last] => println!("first: {} rest arr: {:?} last: {}", first, rest_arr, last)
     }
+    
 }
