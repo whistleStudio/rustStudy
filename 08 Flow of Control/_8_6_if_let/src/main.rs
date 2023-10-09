@@ -2,8 +2,8 @@
 if let 
 - match的精简版，无需考虑穷尽性；
 - if let 左值 = 右值；左值相当于match的pattern, 右值相当于需要match匹配的值
-- if let {}应当返回()
 - 无需实现PartialEq，即可实现非参数化枚举的比较
+- if 没 else 只能返回()；有了else可以返回其他类型
 */
 #![allow(dead_code, unused_variables)]
 
@@ -11,7 +11,7 @@ fn main() {
     let n = 1;
     
     if let 1 = n {
-        println!("right")
+        println!("right");
     }
 
     // #[derive(PartialEq)]
@@ -34,5 +34,7 @@ fn main() {
 
     let b = Bar(1);
 
-    if let Bar(1) = b {}
+    // let b2 = if let Bar(1) = b {1}; // 报错： if 没 else, 只能返回（）
+    let b3 = if let Bar(1) = b {b} else {Bar(0)};
+
 }
