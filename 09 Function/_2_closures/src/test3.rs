@@ -9,41 +9,32 @@
 */
 
 pub fn test3 () {
-    let a = 1;
+    let f1 = || {};
 
-    let cf = || {
-        println!("{}", a);
-    };
-
-    let mut b = 1;
-    let mut cf2 = || {
-       b += 1;
-    };
-
-    let c = "x".to_string();
-    let cf3 = || {
-        println!("{}", c);
-        std::mem::drop(c); // 自动加move?
-    };
-
-    is_fn(cf);
-
-    is_fnmut(cf);
-    is_fnmut(&mut cf2);
-
-    is_fnonce(cf);
-    is_fnonce(&mut cf2);
-    is_fnonce(cf3);
-
-    // fn f1 ()->i32 {a}
-    // let f2 = |a:i32|;
+    let mut count = 0;
+    let mut f2 = || count+=1 ;
 
 
+    let s = "".to_string();
+    let f3 = || std::mem::drop(s);
+
+    // let mut f4 = || count+=1 ; // count作为可变引用不能多次借用
+
+    is_fn(f1);
+
+    is_fn_mut(f1);
+    is_fn_mut(f2);
+   
+    is_fn_once(f1);
+    // is_fn_once(f2);
+    is_fn_once(f3);
+
+    println!("{}", count);
 
 }
 
 fn is_fn<F>(_: F) where F: Fn() -> () {}
 
-fn is_fnmut<F>(_: F) where F: FnMut() -> () {}
+fn is_fn_mut<F>(_: F) where F: FnMut() -> () {}
 
-fn is_fnonce<F>(_: F) where F: FnOnce() -> () {}
+fn is_fn_once<F>(_: F) where F: FnOnce() -> () {}

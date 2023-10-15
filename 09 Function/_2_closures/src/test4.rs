@@ -12,7 +12,13 @@ pub fn test4 () {
     f2();
     // println!("{}", b);
 
-    let c = "".to_string();
-    let f3 = || c;
+    let mut c = "".to_string();
+    let mut f3 = || {c += "x";};
     f3();
+    f3();
+    println!("c:{}", c);
+
+    let mut e = "".to_string();
+    let f5 = || e+="";
+    f5();
 }
