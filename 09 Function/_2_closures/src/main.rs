@@ -1,10 +1,10 @@
 #![allow(unused_variables, dead_code, unused_mut)]
 // mod test;
 // mod test2;
-mod test3;
+// mod test3;
 // mod test4;
+mod _2_type_anonymity;
 
 fn main () {
-    test3::test3();
-    // test4::test4();
+    _2_type_anonymity::show();
 }
